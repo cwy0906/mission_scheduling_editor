@@ -1,2 +1,131 @@
 
-<h1>Helo~</h1>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container title-left">
+      <h1 class="title">
+        任務排程管理
+      </h1>
+      <h2 class="subtitle">
+        Mission Scheduling Editor
+      </h2>
+    </div>
+  </div> 
+</section>
+
+<hr>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-parent">
+    <div data-controller="" class="is-child box field columns is-gapless" >
+        <div class="control column">
+            <input type="text" class="input">
+        </div>
+        <div class="control column">
+            <input type="text" class="input">
+        </div>
+        <div class="column">
+            <%= image_submit_tag("baseline_search.png", class:"button is-primary") %>
+        </div>
+
+        <div class="tabs is-toggle is-fullwidth">
+            <ul>
+                <li class="is-active">
+                <a>
+                    <span>以優先順序排序</span>
+                </a>
+                </li>
+                <li>
+                <a>
+                    <span>以開始時間排序</span>
+                </a>
+                </li>
+                <li>
+                <a>
+                    <span>以結束時間排序</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tile is-child box">
+        <p class="subtitle">任務清單列表</p>
+        <table class="table is-bordered is-fullwidth is-hoverable">
+            <thead>
+                <tr>
+                    <th class="table-th is-info">標題</th>
+                    <th class="table-th is-info">優先度</th>
+                    <th class="table-th is-info">狀態</th>
+                    <th class="table-th is-info">開始時間</th>
+                    <th class="table-th is-info">結束時間</th>
+                    <th class="table-th is-info">標籤</th>
+                    </tr>                        
+            </thead>
+            
+            <tbody>
+                <div class="">
+                <tr>
+                    <td>ooxx</td>
+                    <td>高</td>
+                    <td>已完成</td>
+                    <td>123</td>
+                    <td>456</td>
+                    <td>--</td>
+                </tr>
+                </div>
+
+                <div class="">
+                <tr>
+                    <td>ooxx</td>
+                    <td>低</td>
+                    <td>進行中</td>
+                    <td>789</td>
+                    <td>123</td>
+                    <td>--</td>
+                </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+  <div class="tile is-4 is-vertical is-parent">
+    <div class="tile is-child box">
+      <p class="subtitle">系統訊息</p>
+
+        <div class="buttons">
+            <button class="button is-primary">新增任務</button>
+        </div>
+
+      <article class="message is-primary">
+        <div class="message-body">
+            Lorem ipsum dolor sit amet, consectet elit. <strong>Pellentesque risus mi</strong>.
+        </div>
+      </article>      
+    </div>
+
+ 
+    <div class="tile is-child box">
+        <p class="subtitle">選取任務內容</p>
+        
+        <div class="buttons">
+            <button class="button is-light">刪除該任務</button>
+        </div>
+
+        <div class="table-container">
+            <table class="table is-bordered is-fullwidth">
+                <tbody>
+                <tr>
+                    <th class="table-index-info-th is-info">標題</th>
+                    <td colspan="2">ooxx</td>
+                </tr>
+                <tr>
+                    <th class="table-index-info-th is-info">內容</th>
+                    <td colspan="2">ooxx</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
