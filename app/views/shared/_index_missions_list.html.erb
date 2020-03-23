@@ -1,6 +1,6 @@
 <div class="tile is-child box">
     <p class="subtitle">任務清單列表</p>
-    <table class="table is-bordered is-fullwidth is-hoverable">
+    <table class="table is-bordered is-fullwidth is-hoverable missions-list-table">
         <thead>
             <tr>
                 <th class="table-th is-info">標題</th>
@@ -13,27 +13,19 @@
         </thead>
             
         <tbody>
-            <div class="">
-                <tr>
-                    <td>ooxx</td>
-                    <td>高</td>
-                    <td>已完成</td>
-                    <td>123</td>
-                    <td>456</td>
-                    <td>--</td>
-                </tr>
-            </div>
 
-            <div class="">
-                <tr>
-                    <td>ooxx</td>
-                    <td>低</td>
-                    <td>進行中</td>
-                    <td>789</td>
-                    <td>123</td>
-                    <td>--</td>
+            <% @missions.each do |mission| %>
+                <tr class="mission-row" mission-id ="<%=mission.id%>" >
+                    <td><%= mission.title    %></td>
+                    <td><%= transform_priority(mission.priority) %></td>
+                    <td><%= transform_status(mission.status) %></td>
+                    <td><%= mission.start_time %></td>
+                    <td><%= mission.end_time %></td>
+                    <td><%= mission.tags %></td>
                 </tr>
-            </div>
+            <% end %>
+
         </tbody>
     </table>
 </div>
+

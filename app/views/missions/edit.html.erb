@@ -1,0 +1,81 @@
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-parent">
+        <div class="tile is-child box">
+            <p class="subtitle">編輯-任務表單</p>
+
+
+            <%= form_for(@mission, url: @url, method: @method) do |f| %>
+                <div class="field">
+                    <%= f.label :title, "標題", class: "label" %>
+                    <div class="control">
+                        <%= f.text_field :title, class: "input" %>
+                    </div>
+                </div>
+                <div class="field">
+                    <%= f.label :priority, "優先順序", class: "label" %>
+                    <div class="control">
+                        <div class="select">
+                        <%= f.select :priority,
+                            options_for_select([['高','high'],['中','medium'],['低','low']],@mission.priority),
+                            {} %> 
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="columns">
+                <div class="field column is-5">    
+                    <%= f.label :start_time, "開始時間", class: "label" %>
+                    <div class="control">
+                        <%= f.text_field :start_time, {class: "input", type: "text", id: "theCutePicker"} %> 
+                    </div>
+                </div>
+                <div class="field column is-5">
+                    <%= f.label :end_time, "結束時間", class: "label" %>
+                    <div class="control">
+                        <%= f.text_field :end_time, {class: "input", type: "text", id: "theCutePicker"} %> 
+                    </div>
+                </div>     
+                </div>
+
+
+                <div class="field">
+                    <%= f.label :status, "狀態", class: "label" %>
+                    <div class="control">
+                        <div class="select">
+                        <%= f.select :status,
+                            options_for_select([['處理中','processing'],['待處理','pending'],['已解決','solved']],@mission.status),
+                            {} %> 
+                        </div>
+                    </div>
+                </div>            
+                <div class="field">
+                    <%= f.label :content, "內容", class: "label" %>
+                    <div class="control">
+                        <%= f.text_area :content, class: "textarea" %> 
+                    </div>
+                </div>
+            
+                <div class="field">
+                    <%= f.submit "提交資料", class: "button is-lighting"%>
+                </div>
+
+            <% end %>
+
+
+        </div>
+    </div>
+
+    <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">   
+            <p class="subtitle">系統訊息</p>
+            <article class="message is-primary">
+                <div class="message-body">
+                    <% if notice %>      
+                        <strong>提醒:&nbsp;<%= notice %></strong>
+                    <% end %>
+                </div>
+            </article>   
+        </div>
+    </div>
+
+</div>

@@ -1,10 +1,14 @@
 <p class="subtitle">系統訊息</p>
 <div class="buttons">
-    <button class="button is-primary">新增任務</button>
+    <button class="button is-primary">
+        <%= link_to "新增任務", new_mission_path, method: :get %>
+    </button>
 </div>
 
 <article class="message is-primary">
     <div class="message-body">
-        Lorem ipsum dolor sit amet, consectet elit. <strong>Pellentesque risus mi</strong>.
+        <% if notice %>      
+            <strong>提醒:&nbsp;<%= notice %></strong>
+        <% end %>
     </div>
 </article>

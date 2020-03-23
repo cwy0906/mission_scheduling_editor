@@ -1,7 +1,11 @@
 <p class="subtitle">選取任務內容</p>
 <div class="buttons">
-    <button class="button is-primary">編輯該任務</button>
-    <button class="button is-light">刪除該任務</button>
+    <button class="button is-primary">
+        <a id="edit-mission-link" data-method="get" href="">編輯該任務</a>    
+    </button>
+    <button class="button is-light">
+        <a id="delete-mission-link" data-method="delete" href="">刪除該任務</a>
+    </button>
 </div>
 
 <div class="table-container">
@@ -9,12 +13,14 @@
         <tbody>
             <tr>
                 <th class="table-index-info-th is-info">標題</th>
-                <td colspan="2">ooxx</td>
+                <td colspan="2" id="chose-mission-title"></td>
             </tr>
             <tr>
-                <th class="table-index-info-th is-info">內容</th>
-                <td colspan="2">ooxx</td>
+                <th class="table-index-info-th is-info" colspan="3">內容</th>
             </tr>
         </tbody>
     </table>
+    <textarea id="chose-mission-content" class="textarea" cols="60" rows="10" readonly>
+    </textarea>
+
 </div>

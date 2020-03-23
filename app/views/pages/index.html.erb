@@ -1,19 +1,4 @@
 
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container title-left">
-      <h1 class="title">
-        任務排程管理
-      </h1>
-      <h2 class="subtitle">
-        Mission Scheduling Editor
-      </h2>
-    </div>
-  </div> 
-</section>
-
-<hr>
-
 <div class="tile is-ancestor">
     <div class="tile is-vertical is-parent">
         <div class="">
@@ -30,9 +15,51 @@
             <%= render 'shared/index_message_zone' %>      
         </div>
 
-        <div class="tile is-child box">
+        <div class="tile is-child box mission-content-detail">
             <%= render 'shared/index_chose_content' %>
         </div>
     </div>
 
 </div>
+
+
+<script>
+
+$(function(){
+
+
+    $(".missions-list-table").on("click", ".mission-row", function(){
+        mission_id = $(this).attr("mission-id");   
+
+        $(".mission-row").css("background-color","#FFFFFF");
+        $(".mission-content-detail").css("background-color","#FFFFFF");
+        $(this).css("background-color","#EBFFFC");
+        $(".mission-content-detail").css("background-color","#EBFFFC");
+ 
+        $.ajax({
+            type: "GET",
+            url: "/missions/"+mission_id,
+            dataType: "json",
+            success: function(data){            
+                $("#chose-mission-title").html(data.title);
+                $("#chose-mission-content").html(data.content);    
+                $("#edit-mission-link").attr("href","/missions/"+mission_id+"/edit");
+                $("#delete-mission-link").attr("href","/missions/"+mission_id); 
+                
+
+
+            }  
+        })
+
+
+    });
+
+
+
+
+
+
+
+});
+
+</script>
