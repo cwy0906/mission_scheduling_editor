@@ -72,6 +72,10 @@
                 <div class="message-body">
                     <% if notice %>      
                         <strong>提醒:&nbsp;<%= notice %></strong>
+                    <% end %>                    
+                    <% if error %>
+                        <br>      
+                        <strong>發生錯誤:&nbsp;<%= error %></strong>
                     <% end %>
                 </div>
             </article>   

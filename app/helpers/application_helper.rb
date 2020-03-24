@@ -1,9 +1,9 @@
 module ApplicationHelper
 
     def transform_priority(input_priority)
-        if input_priority.eql?("hight")
+        if input_priority.eql?("high")
             "高"    
-        elsif input_priority.eql?("hight")
+        elsif input_priority.eql?("medium")
             "中"
         else
             "低"
